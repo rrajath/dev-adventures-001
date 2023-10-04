@@ -12,6 +12,14 @@ export function getMovies() {
       releaseDate: '1972-03-24',
       rating: 8.7,
     },
+    {
+      id: 2,
+      title: 'Titanic',
+      overview:
+        'A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the ill-fated R.M.S. Titanic.',
+      releaseDate: '1997-11-01',
+      rating: 7.9,
+    },
   ];
 
   return movies;
