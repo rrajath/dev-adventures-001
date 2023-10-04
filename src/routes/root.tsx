@@ -6,10 +6,10 @@ export default function Root() {
   return (
     <>
       <Flex h={"100vh"}>
-        <Box flex='1' shadow={'5xl'} p={4} borderRadius={'lg'} bg={'coral'}>
+        <Box flex='1' shadow={'5xl'} p={4} borderRadius={'lg'} bg={'#a3b18a'}>
           <Sidebar/>
         </Box>
-        <Box flex='4' p={4} borderRadius={'lg'} bg={'transparent'}>
+        <Box flex='4' p={4} borderRadius={'lg'} bg={'#dad7cd'}>
           <Outlet/>
         </Box>
       </Flex>

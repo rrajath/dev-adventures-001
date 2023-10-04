@@ -1,3 +1,4 @@
+import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { useRouteError } from 'react-router-dom';
 
@@ -6,10 +7,10 @@ function ErrorPage() {
   console.log(error);
 
   return (
-    <div className="error-page">
-      <div className='error-title'>Error Page</div>
-      <div className='error-details'>{error.statusText || error.message}</div>
-    </div>
+    <Flex alignItems={'center'} justifyContent={'center'} height={'100vh'} flexDirection={'column'}>
+      <Box className='error-title'>Error Page</Box>
+      <Box className='error-details'>{error.statusText || error.message}</Box>
+    </Flex>
   );
 }
 
