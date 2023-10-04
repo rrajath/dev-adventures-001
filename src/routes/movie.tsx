@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { getMovie } from '../utils/movies';
+import { Box, Flex, Text } from '@chakra-ui/react';
 
 export function loader({ params }) {
   const movie = getMovie(params.movieId);
@@ -10,9 +11,14 @@ export function loader({ params }) {
 export default function MoviePage() {
   const movie: any = useLoaderData();
   return (
-    <div>
-      <h1>Movie Page</h1>
-      {movie.title}
-    </div>
+    <Flex>
+      <Box flex={'10'}>
+        <Text fontSize={'4xl'} mb={8}>{movie.title} ({movie.releaseDate})</Text>
+        <Text mb={8}>{movie.overview}</Text>
+      </Box>
+      <Box flex={'1'}>
+        <Text fontSize={'4xl'}>{movie.rating}</Text>
+      </Box>
+    </Flex>
   );
 }

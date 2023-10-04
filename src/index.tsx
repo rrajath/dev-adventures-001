@@ -7,7 +7,7 @@ import Root from './routes/root';
 import ErrorPage from './routes/errorPage';
 import MoviePage from './routes/movie';
 import { loader as movieLoader } from './routes/movie';
-import { loader as rootLoader } from './routes/root';
+import { loader as sidebarLoader } from './routes/sidebar';
 import { ChakraProvider } from '@chakra-ui/react';
 
 const router = createBrowserRouter([
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
-    loader: rootLoader,
+    loader: sidebarLoader,
     children: [
       {
         path: '/movies/:movieId',

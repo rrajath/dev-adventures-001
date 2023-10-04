@@ -1,21 +1,18 @@
-import { Link, Outlet, useLoaderData } from "react-router-dom";
-import { getMovies } from "../utils/movies";
+import { Outlet } from "react-router-dom";
+import { Box, Flex } from "@chakra-ui/react";
+import Sidebar from "./sidebar";
 
-export function loader() {
-  return getMovies();
-}
 export default function Root() {
-  const movies: any = useLoaderData();
   return (
     <>
-      <h1>Hello World!</h1>
-      <Link to="/movies/0">{movies[0].title}</Link>
-
-      <hr/>
-
-      <div>
-        <Outlet/>
-      </div>
+      <Flex h={"100vh"}>
+        <Box flex='1' shadow={'5xl'} p={4} borderRadius={'lg'} bg={'coral'}>
+          <Sidebar/>
+        </Box>
+        <Box flex='4' p={4} borderRadius={'lg'} bg={'transparent'}>
+          <Outlet/>
+        </Box>
+      </Flex>
     </>
   )
 }

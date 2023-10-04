@@ -7,7 +7,7 @@ export function getMovies() {
       title: 'The Godfather',
       overview:
         'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
-      release_date: '1972-03-24',
+      releaseDate: '1972-03-24',
       rating: 8.7,
     },
   ];
@@ -17,5 +17,7 @@ export function getMovies() {
 
 export function getMovie(id: number) {
   const movie = getMovies()[id];
+  const releaseDate = movie.releaseDate;
+  movie.releaseDate = releaseDate.substring(0, 4);
   return movie;
 }
