@@ -5,12 +5,23 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Root from './routes/root';
 import ErrorPage from './routes/errorPage';
+import MoviePage from './routes/movie';
+import { loader as movieLoader } from './routes/movie';
+import { loader as rootLoader } from './routes/root';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
+    loader: rootLoader,
+    children: [
+      {
+        path: '/movies/:movieId',
+        element: <MoviePage/>,
+        loader: movieLoader,
+      }
+    ]
   }
 ])
 const root = ReactDOM.createRoot(
