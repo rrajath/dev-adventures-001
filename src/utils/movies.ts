@@ -1,5 +1,7 @@
 import { Movie } from './types';
 
+let movies: Movie[] = [];
+
 export function getMovies() {
   const movies: Movie[] = [
     {
@@ -16,8 +18,13 @@ export function getMovies() {
 }
 
 export function getMovie(id: number) {
-  const movie = getMovies()[id];
+  const movies = getMovies();
+  const movie = movies.find((m: Movie) => Number(m.id) == id);
   const releaseDate = movie.releaseDate;
   movie.releaseDate = releaseDate.substring(0, 4);
   return movie;
+}
+
+export function createMovie(updates: any) {
+  movies.push(updates);
 }
