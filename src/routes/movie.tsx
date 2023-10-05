@@ -11,7 +11,7 @@ export function loader({ params }) {
 export default function MoviePage() {
   const movie: any = useLoaderData();
   return (
-    <Flex>
+    <Flex p={12}>
       <Box flex={'10'}>
         <Text fontSize={'4xl'} mb={8}>{movie.title} ({movie.releaseDate})</Text>
         <Text mb={8}>{movie.overview}</Text>

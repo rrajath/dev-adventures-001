@@ -1,6 +1,7 @@
 import { Movie } from './types';
 
 let movies: Movie[] = [];
+let idCounter = 0;
 
 export function getMovies() {
   const movies: Movie[] = [
@@ -34,5 +35,6 @@ export function getMovie(id: number) {
 }
 
 export function createMovie(updates: any) {
-  movies.push(updates);
+  idCounter++;
+  movies.push({ ...updates, id: idCounter });
 }
