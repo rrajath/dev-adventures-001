@@ -10,7 +10,7 @@ export function loader() {
 export default function Sidebar() {
   const movies: any = useLoaderData();
   return (
-    <Box dropShadow={'lg'} color={'white'} p={4} id='sidebar'>
+    <Box color={'white'} p={4} id='sidebar'>
       { movies.length === 0 ?
       <div>No Movies</div> :
       movies.map((movie: any) => (
