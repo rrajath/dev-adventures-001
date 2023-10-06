@@ -5,7 +5,7 @@ import Sidebar from "./sidebar";
 export default function Root() {
   return (
     <>
-      <Flex h={"75vh"} shadow={'2xl'} borderLeft={'1px solid white'} borderTop={'1px solid white'} borderRadius='lg'>
+      <Flex h={"75vh"} shadow={'2xl'} borderRadius='lg'>
         <Box flex='1' p={4} bg={'#a3b18a'} borderLeftRadius={'lg'}>
           <Sidebar/>
         </Box>

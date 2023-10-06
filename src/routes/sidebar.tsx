@@ -1,11 +1,11 @@
-import React from 'react';
 import { getMovies } from '../utils/movies';
-import { Form, NavLink, redirect, useLoaderData, useSubmit } from 'react-router-dom';
+import { NavLink, useLoaderData } from 'react-router-dom';
 import { Box, Button, Divider } from '@chakra-ui/react';
 import MovieList from './movieList';
 
 export function loader() {
-  return getMovies();
+  const movies = getMovies();
+  return movies;
 }
 
 export default function Sidebar() {

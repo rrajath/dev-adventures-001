@@ -11,7 +11,9 @@ import { loader as sidebarLoader } from './routes/sidebar';
 import { ChakraProvider } from '@chakra-ui/react';
 import NewMovie from './routes/newMovie';
 import { action as newMovieAction } from './routes/newMovie';
+import { action as editMovieAction } from './routes/editMovie';
 import IndexPage from './routes';
+import EditMovie from './routes/editMovie';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,12 @@ const router = createBrowserRouter([
         path: '/movies/new',
         element: <NewMovie/>,
         action: newMovieAction,
+      },
+      {
+        path: '/movies/:movieId/edit',
+        element: <EditMovie/>,
+        loader: movieLoader,
+        action: editMovieAction,
       }
     ]
   }
