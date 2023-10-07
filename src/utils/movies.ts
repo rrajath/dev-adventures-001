@@ -20,8 +20,13 @@ let movies: Movie[] = [
   },
 ];
 
-export function getMovies() {
-  return movies;
+export function getMovies(q?: string) {
+  if (!q) {
+    return movies;
+  }
+  return movies.filter((m: Movie) => {
+    return m.title.toLowerCase().includes(q.toLowerCase());
+  });
 }
 
 export function getMovie(id: number) {
