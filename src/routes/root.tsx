@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Box, Flex } from "@chakra-ui/react";
-import Sidebar from "./sidebar";
+import Sidebar from "../components/sidebar";
 
 export default function Root() {
   return (

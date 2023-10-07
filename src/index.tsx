@@ -7,7 +7,7 @@ import Root from './routes/root';
 import ErrorPage from './routes/errorPage';
 import MoviePage from './routes/movie';
 import { loader as movieLoader } from './routes/movie';
-import { loader as sidebarLoader } from './routes/sidebar';
+import { loader as sidebarLoader } from './components/sidebar';
 import { ChakraProvider } from '@chakra-ui/react';
 import NewMovie from './routes/newMovie';
 import { action as newMovieAction } from './routes/newMovie';
