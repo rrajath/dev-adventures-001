@@ -1,8 +1,9 @@
 import { Movie } from './types';
 
+let idCounter = 0;
 let movies: Movie[] = [
   {
-    id: 1,
+    id: idCounter++,
     title: 'The Godfather',
     overview:
       'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
@@ -10,7 +11,7 @@ let movies: Movie[] = [
     rating: 8.7,
   },
   {
-    id: 2,
+    id: idCounter++,
     title: 'Titanic',
     overview:
       'A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the ill-fated R.M.S. Titanic.',
@@ -18,7 +19,6 @@ let movies: Movie[] = [
     rating: 7.9,
   },
 ];
-let idCounter = 0;
 
 export function getMovies() {
   return movies;
@@ -38,4 +38,8 @@ export function createMovie(updates: any) {
 export function updateMovie(updates: any, id: number) {
   const movie = getMovie(id);
   Object.assign(movie, updates);
+}
+
+export function deleteMovie(id: number) {
+  movies = movies.filter((m: Movie) => Number(m.id) != id);
 }

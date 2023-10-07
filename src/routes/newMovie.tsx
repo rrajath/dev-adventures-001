@@ -6,6 +6,7 @@ import { createMovie } from '../utils/movies';
 export async function action({ request }) {
   const formData = await request.formData();
   const updates = Object.fromEntries(formData);
+  console.log("🚀 ~ file: newMovie.tsx:9 ~ action ~ updates:", updates)
   createMovie(updates);
   return redirect('/');
 }
