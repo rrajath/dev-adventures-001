@@ -1,7 +1,8 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Divider, Text } from '@chakra-ui/react';
 import React from 'react';
 import { Movie } from '../utils/types';
 import { NavLink } from 'react-router-dom';
+import FavoriteMovies from './favoriteMovies';
 
 interface MovieListProps {
   movies: Movie[];
@@ -10,9 +11,10 @@ interface MovieListProps {
 export default function MovieList({ movies }: MovieListProps) {
   return (
     <Box>
-      { movies.length === 0 ?
-        <Box textAlign={'center'} mt={8}>No Movies</Box> :
-        movies.map((movie: any) => (
+      <FavoriteMovies movies={movies}/>
+      { movies.length === 0 ? <Box textAlign={'center'} mt={8}>No Movies</Box> :
+        <Text fontSize={'xl'} color={'#344e41'} textAlign={'center'} mt={8}>All Movies</Text> }
+        {movies.map((movie: any) => (
           <NavLink
           key={movie.id}
           to={`/movies/${movie.id}`}

@@ -2,7 +2,11 @@ import React from 'react';
 import { Box, Button, Flex } from '@chakra-ui/react';
 import { Form } from 'react-router-dom';
 
-export default function Actions() {
+interface ActionsProps {
+  favorite: boolean;
+}
+
+export default function Actions({ favorite }: ActionsProps) {
   return (
     <Flex mb={8} justifyContent={'center'}>
       <Box mr={4}>
@@ -12,7 +16,7 @@ export default function Actions() {
       </Box>
       <Box mr={4}>
         <Form method='post' action='favorite'>
-          <Button colorScheme='green' type='submit'>Favorite</Button>
+          <Button colorScheme='facebook' type='submit' variant={favorite ? 'solid' : 'outline'}>Favorite</Button>
         </Form>
       </Box>
       <Box>

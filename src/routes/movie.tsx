@@ -12,7 +12,7 @@ export default function MoviePage() {
   const movie: any = useLoaderData();
   return (
     <Flex p={12} direction={'column'}>
-      <Actions/>
+      <Actions favorite={movie.favorite}/>
       <Flex color={'#344e41'}>
         <Box flex={'10'}>
           <Text fontSize={'4xl'} mb={8}>{movie.title} ({getReleaseYear(movie.releaseDate)})</Text>
