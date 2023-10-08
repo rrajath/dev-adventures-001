@@ -51,3 +51,12 @@ export function updateMovie(updates: any, id: number) {
 export function deleteMovie(id: number) {
   movies = movies.filter((m: Movie) => Number(m.id) != id);
 }
+
+export function favoriteMovie(id: number) {
+  const movie = getMovie(id);
+  if (!movie.favorite) {
+    Object.assign(movie, { favorite: true });
+  } else {
+    Object.assign(movie, { favorite: false });
+  }
+}
