@@ -8,12 +8,12 @@ The goal of this project is to learn and use [React Router](https://reactrouter.
 
 ## Goals
 
-- [ ] CRUD use cases for the movie database, all data stored in memory
+- [x] CRUD use cases for the movie database, all data stored in memory
 - [x] Error page that shows details about the error
 - [x] Split view of movie list and movie details where the movies in movie list is highlighted upon selection
-- [ ] Ability to search for movies based on name and overview
+- [x] Ability to search for movies based on name and overview
 - [ ] Manage history stack of pages
-- [ ] Ability to favorite a movie
-- [ ] If favorites exist, show them at the top under a separate heading in sidebar
+- [x] Ability to favorite a movie
+- [x] If favorites exist, show them at the top under a separate heading in sidebar
 
 ## Notes
