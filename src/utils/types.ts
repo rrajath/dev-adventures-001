@@ -4,4 +4,5 @@ export type Movie = {
   overview: string;
   releaseDate: string;
   rating: number;
+  favorite?: boolean;
 };
