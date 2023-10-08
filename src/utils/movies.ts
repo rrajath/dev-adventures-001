@@ -25,7 +25,10 @@ export function getMovies(q?: string) {
     return movies;
   }
   return movies.filter((m: Movie) => {
-    return m.title.toLowerCase().includes(q.toLowerCase());
+    return (
+      m.title.toLowerCase().includes(q.toLowerCase()) ||
+      m.overview.toLowerCase().includes(q.toLowerCase())
+    );
   });
 }
 
