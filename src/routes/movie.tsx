@@ -1,11 +1,18 @@
 import { useLoaderData } from 'react-router-dom';
-import { getMovie } from '../utils/movies';
+import { getMovie, updateMovie } from '../utils/movies';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import Actions from '../components/actions';
 
 export function loader({ params }) {
   const movie = getMovie(params.movieId);
   return movie;
+}
+
+export async function action({ request, params }) {
+  const formData = await request.formData();
+  return updateMovie({
+    favorite: formData.get('favorite') === 'true',
+  }, params.movieId);
 }
 
 export default function MoviePage() {

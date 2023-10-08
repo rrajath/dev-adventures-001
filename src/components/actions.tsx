@@ -1,12 +1,13 @@
 import React from 'react';
 import { Box, Button, Flex } from '@chakra-ui/react';
-import { Form } from 'react-router-dom';
+import { Form, useFetcher } from 'react-router-dom';
 
 interface ActionsProps {
   favorite: boolean;
 }
 
 export default function Actions({ favorite }: ActionsProps) {
+  const fetcher = useFetcher();
   return (
     <Flex mb={8} justifyContent={'center'}>
       <Box mr={4}>
@@ -15,9 +16,22 @@ export default function Actions({ favorite }: ActionsProps) {
         </Form>
       </Box>
       <Box mr={4}>
-        <Form method='post' action='favorite'>
-          <Button colorScheme='facebook' type='submit' variant={favorite ? 'solid' : 'outline'}>Favorite</Button>
-        </Form>
+        <fetcher.Form method='post'>
+          <Button
+            name='favorite'
+            value={favorite ? 'false' : 'true'}
+            colorScheme='facebook'
+            variant={favorite ? 'solid' : 'outline'}
+            aria-label={
+              favorite
+                ? "Remove from favorites"
+                : "Add to favorites"
+            }
+            type='submit'
+            >
+            {favorite ? "Favorited" : "Favorite"}
+          </Button>
+        </fetcher.Form>
       </Box>
       <Box>
         <Form

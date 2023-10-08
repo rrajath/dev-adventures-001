@@ -1,5 +1,4 @@
-import { Box, Divider, Text } from '@chakra-ui/react';
-import React from 'react';
+import { Box, Text } from '@chakra-ui/react';
 import { Movie } from '../utils/types';
 import { NavLink } from 'react-router-dom';
 import FavoriteMovies from './favoriteMovies';

@@ -46,6 +46,7 @@ export function createMovie(updates: any) {
 export function updateMovie(updates: any, id: number) {
   const movie = getMovie(id);
   Object.assign(movie, updates);
+  return movie;
 }
 
 export function deleteMovie(id: number) {

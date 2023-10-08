@@ -8,7 +8,6 @@ interface FavoriteMoviesProps {
 
 export default function FavoriteMovies({movies}: FavoriteMoviesProps) {
   const favorites = movies.filter((m: Movie) => m.favorite);
-  console.log("🚀 ~ file: favoriteMovies.tsx:11 ~ FavoriteMovies ~ favorites:", favorites)
   if (favorites.length === 0) {
     return (
       <Box></Box>

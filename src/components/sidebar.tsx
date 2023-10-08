@@ -1,6 +1,6 @@
 import { getMovies } from '../utils/movies';
 import { NavLink, useLoaderData } from 'react-router-dom';
-import { Box, Button, Divider, Flex } from '@chakra-ui/react';
+import { Box, Button, Divider } from '@chakra-ui/react';
 import MovieList from './movieList';
 import SearchBox from './SearchBox';
 
